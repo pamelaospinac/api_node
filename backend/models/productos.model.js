@@ -22,13 +22,15 @@ const schemaProducto = new mongoose.Schema({
         type: String,
         Required: [true, 'No existe la imagen o ruta a la imagen por defecto']
     },
-    // categoria: {
-    //     [{
-    //         id: Number,
-    //         nombre: String,
-    //         imagen: String
-    //     }]
-    // }
+    categoria: [{
+        id: {
+            type: Number,
+        },
+        nombre: {
+            type: String,
+        },
+        imagen: String
+    }]
 });
 
 const producto = mongoose.model("producto", schemaProducto);
